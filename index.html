@@ -61,11 +61,19 @@
         </div>
         <div class="content-grid">
           <article class="panel">
-            <h3>What it is about</h3>
+            <h3>What it is about?</h3>
             <p>The 2nd Unconventional Robotics Symposium is a free two-day event at TU Delft for researchers, 
               students, and technically-minded enthusiasts who take robotics beyond its standard assumptions; 
               through soft bodies, physical computation, embodied intelligence, nonlinear dynamics, and inspiration 
               from biology, arts, and beyond. <br><br>Free for all. No registration fee.</p>
+          </article>
+          <article class="panel">
+            <h3>Why this event?</h3>
+            <p>
+              Academic robotics conferences are valuable - but they are also expensive, carbon-heavy, and often inaccessible. 
+              This symposium was born as a different model: a focused, free, local event where researchers and enthusiasts can 
+              exchange ideas without the overhead. No registration fee. No need to fly. Just good talks and good discussion.
+            </p>
           </article>
           <article class="panel">
             <h3>Key information</h3>
@@ -238,7 +246,7 @@
         <div class="section-header">
           <h2>Registration</h2>
           <p>This form will open in [month].</p>
-        </div>        
+        </div>
         <div class="content-grid">
           <article class="panel">
             <!-- <h3>Registration</h3> -->
@@ -256,16 +264,20 @@
       <div class="shell section-block">
         <div class="section-header">
           <h2>Practical info</h2>
-          <p>To be announced.</p>
+          <p>For people travelling from outside Delft.</p>
         </div>
-        <div class="content-grid">
+        <div class="content-grid two-up">
           <article class="panel">
             <h3>Getting there</h3>
-            <p>Delft is 15 minutes by train from Rotterdam Centraal and 45 minutes from Amsterdam Centraal.</p>
+            <p>
+              Delft is 15 minutes by train from Rotterdam Centraal and 1 hour from Amsterdam Centraal. <br>
+              More info on the <a href="https://www.ns.nl/en" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">Dutch Railways website</a>. <br>
+            </p>
           </article>
           <article class="panel">
             <h3>Accommodation</h3>
-            <p>We recommend hotels in Delft city centre, a 10-minute walk from campus. Options include [TBD - coordinate with Ebrahim from 1y ago].</p>
+            <p>We recommend hotels in Delft city centre, a 10-minute walk from campus. <br>
+              Options include [TBD].</p>
           </article>
           <article class="panel">
             <h3>What is included</h3>
@@ -284,7 +296,35 @@
       <div class="shell section-block">
         <div class="section-header">
           <h2>Previous edition</h2>
-          <p>To be announced.</p>
+          <p>The first edition took place on 1. October 2025 at TU Delft</p>
+        </div>
+        <div class="content-grid">
+          <div class="speaker-grid gallery-grid">
+            <div class="speaker-card gallery-item">
+              <div class="speaker-image">
+                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+1" alt="Previous edition photo 1" loading="lazy">
+              </div>
+            </div>
+            <div class="speaker-card gallery-item">
+              <div class="speaker-image">
+                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+2" alt="Previous edition photo 2" loading="lazy">
+              </div>
+            </div>
+            <div class="speaker-card gallery-item">
+              <div class="speaker-image">
+                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+3" alt="Previous edition photo 3" loading="lazy">
+              </div>
+            </div>
+            <div class="speaker-card gallery-item">
+              <div class="speaker-image">
+                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+4" alt="Previous edition photo 4" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <article class="panel">
+            <h3>Recording</h3>
+            <p>Watch the recordings from the first edition on <a href="https://collegerama.tudelft.nl/Mediasite/Channel/robotics-urs2025/browse/null/most-recent/null/0/null" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">Collegerama</a>.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -326,9 +366,13 @@
         </div>
         <div class="organizer-meta">
           <div class="organizer-banner">
-            <img src="img/tudelft-ri.jpeg" alt="TU Delft Robotics Institute" class="organizer-logo">
+            <a href="https://www.tudelft.nl/robotics-institute/" target="_blank" rel="noopener noreferrer">
+              <img src="img/tudelft-ri.jpeg" alt="TU Delft Robotics Institute" class="organizer-logo">
+            </a>
             <div class="organizer-banner-text">
-              <h3>This is a TU Delft Robotics Institute event</h3>
+              <a href="https://www.tudelft.nl/robotics-institute/" target="_blank" rel="noopener noreferrer">
+                <h3>This is a TU Delft Robotics Institute event</h3>
+              </a>
             </div>
           </div>
           <h3>Kindly supported by</h3>
@@ -371,6 +415,13 @@
       </div>
     </section>
   </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="">
+    </div>
+  </div>
 
   <footer class="footer shell">
     <p>Unconventional Robotics Symposium 2026</p>
@@ -419,48 +470,62 @@
     sections.forEach((section) => observer.observe(section));
     setActiveLink('overview');
 
-    const map = L.map('simple-map', {
-      scrollWheelZoom: false
-    }).setView([52.001, 4.37], 15);
+    const mapEl = document.getElementById('simple-map');
+    if (mapEl) {
+      const map = L.map(mapEl, { scrollWheelZoom: false }).setView([52.001, 4.37], 15);
 
-    const createMarkerIcon = (color) => L.divIcon({
-      className: 'custom-marker-icon',
-      html: `<span class="custom-marker-pin custom-marker-pin--${color}"></span>`,
-      iconSize: [28, 36],
-      iconAnchor: [14, 34],
-      popupAnchor: [0, -30]
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(map);
+
+      const createMarkerIcon = (color) => L.divIcon({
+        className: 'custom-marker-icon',
+        html: `<span class="custom-marker-pin custom-marker-pin--${color}"></span>`,
+        iconSize: [28, 36],
+        iconAnchor: [14, 34],
+        popupAnchor: [0, -30]
+      });
+
+      const places = [
+        { name: 'Conference venue', coords: [52.001, 4.37], color: 'blue', description: 'Main conference location.' },
+        { name: 'Lunch option 1', coords: [52.003, 4.3665], color: 'green', description: 'Example lunch spot. <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>' },
+        { name: 'Lunch option 2', coords: [51.9995, 4.374], color: 'orange', description: 'Another lunch spot. <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Open map link</a>' }
+      ];
+
+      places.forEach((place) => {
+        L.marker(place.coords, { icon: createMarkerIcon(place.color) })
+          .addTo(map)
+          .bindPopup(`<strong>${place.name}</strong><br>${place.description}`);
+      });
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        if (!img) return;
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+      });
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
+    const closeLightbox = () => {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    };
 
-    const places = [
-      {
-        name: 'Conference venue',
-        coords: [52.001, 4.37],
-        color: 'blue',
-        description: 'Main conference location.'
-      },
-      {
-        name: 'Lunch option 1',
-        coords: [52.003, 4.3665],
-        color: 'green',
-        description: 'Example lunch spot. <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'
-      },
-      {
-        name: 'Lunch option 2',
-        coords: [51.9995, 4.374],
-        color: 'orange',
-        description: 'Another lunch spot. <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Open map link</a>'
-      }
-    ];
-
-    places.forEach((place) => {
-      L.marker(place.coords, { icon: createMarkerIcon(place.color) })
-        .addTo(map)
-        .bindPopup(`<strong>${place.name}</strong><br>${place.description}`);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
