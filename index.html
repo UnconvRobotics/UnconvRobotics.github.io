@@ -19,15 +19,22 @@
         <span class="brand-title">Unconventional Robotics Symposium</span>
       </a>
       <nav class="nav" aria-label="Section navigation">
-        <a href="#overview">Overview</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#posters">Posters</a>
-        <a href="#registration">Registration</a>
-        <a href="#practical_info">Practical info</a>
-        <a href="#previous_edition">Previous edition</a>
-        <a href="#organizers">Organizers</a>
-        <a href="#location">Location</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#speakers">Speakers</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#posters">Posters</a>
+          <a href="#registration">Registration</a>
+          <a href="#practical_info">Practical info</a>
+          <a href="#previous_edition">Previous edition</a>
+          <a href="#organizers">Organizers</a>
+          <a href="#location">Location</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -357,8 +364,24 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
+    const nav = document.querySelector('.nav');
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true' ? false : true;
+      nav.classList.toggle('is-open', expanded);
+      toggle.setAttribute('aria-expanded', expanded);
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
     const sections = [...document.querySelectorAll('section[id]')];
-    const navLinks = [...document.querySelectorAll('.nav a')];
 
     const setActiveLink = (id) => {
       navLinks.forEach((link) => {
