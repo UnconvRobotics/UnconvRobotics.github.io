@@ -9,6 +9,8 @@
   --accent: #2563eb;
   --accent-strong: #1d4ed8;
   --accent-soft: #dbeafe;
+  --accent-secondary: #1A6B3C;
+  --accent-secondary-soft: #D1FADF;
   --content-width: 1080px;
   --radius: 14px;
 }
@@ -141,8 +143,8 @@ img {
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: var(--accent-secondary-soft);
+  color: var(--accent-secondary);
 }
 
 @media (max-width: 960px) {
@@ -215,6 +217,12 @@ p {
   margin: 0;
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 h1 {
   max-width: 20ch;
   font-size: clamp(2.4rem, 6vw, 4.6rem);
@@ -243,6 +251,15 @@ h3 {
   font-size: 1.03rem;
 }
 
+.hero-tags {
+  font-size: 0.78rem;
+  font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', monospace;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
 .hero-links {
   display: flex;
   flex-direction: column;
@@ -254,8 +271,8 @@ h3 {
   display: inline-block;
   padding: 5px 14px;
   border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: var(--accent-secondary-soft);
+  color: var(--accent-secondary);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -284,7 +301,7 @@ h3 {
 }
 
 .button-primary:hover {
-  background: var(--accent-strong);
+  background: var(--accent-secondary);
 }
 
 .button-secondary {
@@ -297,10 +314,18 @@ h3 {
   background: #f8fbff;
 }
 
-.section-block {
+/* .section-block {
   border-top: 1px solid var(--line);
   padding-top: 20px;
-}
+} */
+
+h2::before{ 
+  content: ''; 
+  display: block; 
+  width: 40px; 
+  height: 3px; 
+  background: var(--accent-secondary); 
+  margin-bottom: 12px; }
 
 .section-header {
   display: grid;
@@ -356,6 +381,12 @@ h3 {
   padding: 14px;
   display: grid;
   gap: 10px;
+}
+
+.speaker-card:hover { 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); 
+  transform: translateY(-2px); 
+  transition: all 0.2s ease; 
 }
 
 .speaker-image {
@@ -684,4 +715,8 @@ textarea {
 
 .gallery-item {
   cursor: pointer;
+}
+
+.highlight {
+  color: var(--accent-secondary);
 }
