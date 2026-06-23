@@ -45,7 +45,7 @@
     <section class="hero section" id="hero">
       <div class="hero-inner container">
         <div>
-          <p class="kicker">TU Delft &middot; 14&ndash;15 September 2026</p>
+          <p class="kicker-accent">TU Delft &middot; 14&ndash;15 September 2026</p>
           <h1>2<sup>nd</sup> <span class="hl">Unconventional</span> Robotics Symposium</h1>
           <p class="theme">(Un)conventional sources of inspiration: Biology, Arts, Books, and beyond</p>
           <p class="ethos">Free to attend. Low-carbon. Local. Informal, but serious.</p>
@@ -375,6 +375,7 @@
             <h3>Davood Farhadi</h3>
           </article>
         </div>
+        <br>
         <div class="organizer-meta">
           <div class="organizer-banner">
             <a href="https://www.tudelft.nl/robotics-institute/" target="_blank" rel="noopener noreferrer">
@@ -386,6 +387,7 @@
               </a>
             </div>
           </div>
+          <br>
           <h3 style="font-size: 1rem;">Kindly supported by</h3>
           <div class="sponsor-grid">
             <div class="sponsor-placeholder">
@@ -442,30 +444,45 @@
       });
     });
 
-    const sections = [...document.querySelectorAll('section[id]')];
+    const sections = navLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
 
     const setActiveLink = (id) => {
       navLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${id}`
+        );
       });
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      const navHeight = nav.offsetHeight;
 
-      if (visible) {
-        setActiveLink(visible.target.id);
+      let current = sections[0];
+
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= navHeight + 50) {
+          current = section;
+        } else {
+          break;
+        }
       }
-    }, {
-      rootMargin: '-35% 0px -55% 0px',
-      threshold: [0.15, 0.35, 0.6]
+
+      setActiveLink(current.id);
+    };
+
+    window.addEventListener('scroll', updateActiveSection, {
+      passive: true
     });
 
-    sections.forEach((section) => observer.observe(section));
-    setActiveLink('overview');
+    window.addEventListener('resize', updateActiveSection);
 
+    updateActiveSection();
+    
     const mapEl = document.getElementById('simple-map');
     if (mapEl) {
       const map = L.map(mapEl, { scrollWheelZoom: false }).setView([52.001, 4.37], 15);
