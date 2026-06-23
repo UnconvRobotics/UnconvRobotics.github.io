@@ -3,372 +3,381 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Simple one-page conference site with overview, speakers, schedule, registration, and location.">
+  <meta name="description" content="Free two-day symposium at TU Delft, 14-15 September 2026 — soft bodies, embodied intelligence, nonlinear dynamics, and unconventional robotics.">
   <meta property="og:title" content="2nd Unconventional Robotics Symposium">
   <meta property="og:description" content="Free two-day symposium at TU Delft, 14-15 September 2026">
   <meta property="og:image" content="[hero image URL]">
   <title>Unconventional Robotics Symposium 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="simple.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
-  <header class="topbar">
-    <div class="shell topbar-inner">
-      <a class="brand" href="#overview">
-        <span class="brand-kicker">2026</span>
-        <span class="brand-title">Unconventional Robotics Symposium</span>
-      </a>
-      <nav class="nav" aria-label="Section navigation">
-        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="nav-links">
-          <a href="#overview">Overview</a>
-          <a href="#speakers">Speakers</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#posters">Posters</a>
-          <a href="#registration">Registration</a>
-          <a href="#practical_info">Practical info</a>
-          <a href="#previous_edition">Previous edition</a>
-          <a href="#organizers">Organizers</a>
-          <a href="#location">Location</a>
-        </div>
-      </nav>
+
+  <nav class="nav" aria-label="Section navigation">
+    <a class="brand" href="#overview">
+      <span class="brand-kicker">2026</span>
+      <span class="brand-title">Unconventional Robotics Symposium</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#posters">Posters</a>
+      <a href="#registration">Registration</a>
+      <a href="#practical_info">Practical info</a>
+      <a href="#previous_edition">Previous edition</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#location">Location</a>
     </div>
-  </header>
+  </nav>
 
   <main>
+
+    <!-- ============= HERO ============= -->
     <section class="hero section" id="overview">
-      <div class="shell hero-inner">
-        <p class="eyebrow">
-          14 - 15 September 2026 · Delft 
-          <span class="pill">Free to attend</span>
-        </p>
-        <h1>2nd <span class="highlight">Unconventional</span> Robotics Symposium</h1>
-        <p class="hero-tags">SOFT BODIES · EMBODIED INTELLIGENCE · NONLINEAR DYNAMICS · BIOLOGY · ARTS · BOOKS</p>
-        <h3>(Un)conventional sources of inspiration: Biology, Arts, Books, and beyond</h3>
-        <div class="hero-links">
-          <a class="button button-primary button-disabled" href="https://sites.google.com/view/ucs-reg" target="_blank" rel="noopener noreferrer">Registration coming soon</a>
-          <a class="button button-secondary" href="#location">See location</a>
+      <div>
+        <p class="kicker">TU Delft &middot; 14&ndash;15 September 2026</p>
+        <h1>2nd <span class="hl">Unconventional</span> Robotics Symposium</h1>
+        <p class="theme">(Un)conventional sources of inspiration: Biology, Arts, Books, and beyond</p>
+        <p class="ethos">Free to attend. Low-carbon. Local. Informal, but serious.</p>
+        <div class="cta">
+          <a class="button " href="https://sites.google.com/view/ucs-reg" target="_blank" rel="noopener noreferrer">Register</a>
+          <a class="button secondary" href="#schedule">See programme</a>
         </div>
       </div>
+      <div></div>
+      <div class="doodles" aria-hidden="true"></div>
     </section>
 
-    <section class="section section-spaced" id="overview">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Overview</h2>
-          <!-- <p>Use this section for the abstract or short conference description. It follows the style of the reference pages: title, compact text, and a very clear content flow.</p> -->
-        </div>
+    <!-- ============= OVERVIEW ============= -->
+    <section class="section" id="about">
+      <div class="container">
+        <span class="kicker">About</span>
+        <h2>What is it about?</h2>
+        <p>
+          The 2nd Unconventional Robotics Symposium is a free two-day event at TU Delft for researchers,
+          students, and technically-minded enthusiasts who take robotics beyond its standard assumptions;
+          through soft bodies, physical computation, embodied intelligence, nonlinear dynamics, and inspiration
+          from biology, arts, and beyond. Free for all. No registration fee.
+        </p>
+        <br>
         <div class="content-grid">
-          <article class="panel">
-            <h3>What it is about?</h3>
-            <p>The 2nd Unconventional Robotics Symposium is a free two-day event at TU Delft for researchers, 
-              students, and technically-minded enthusiasts who take robotics beyond its standard assumptions; 
-              through soft bodies, physical computation, embodied intelligence, nonlinear dynamics, and inspiration 
-              from biology, arts, and beyond. <br><br>Free for all. No registration fee.</p>
-          </article>
-          <article class="panel">
-            <h3>Why this event?</h3>
-            <p>
-              Academic robotics conferences are valuable - but they are also expensive, carbon-heavy, and often inaccessible. 
-              This symposium was born as a different model: a focused, free, local event where researchers and enthusiasts can 
-              exchange ideas without the overhead. No registration fee. No need to fly. Just good talks and good discussion.
-            </p>
-          </article>
-          <article class="panel">
+          <div class="panel">
             <h3>Key information</h3>
-            <ul class="detail-list">
-              <li><strong>Date:</strong> 14 - 15 September 2026</li>
+            <ul>
+              <li><strong>Date:</strong> 14 &ndash; 15 September 2026</li>
               <li><strong>Location:</strong> Delft, The Netherlands</li>
               <li><strong>Contact:</strong> <a href="mailto:c.dellasantina@tudelft.nl">c.dellasantina@tudelft.nl</a></li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-spaced" id="speakers">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Speakers</h2>
-          <p>(More to come!)</p>
-        </div>
-        <div class="speaker-grid">
+    <!-- ============= NAVY BAND: WHY ============= -->
+    <section class="band-dark section" id="why">
+      <div class="container">
+        <span class="kicker accent">Why</span>
+        <h2>Why this symposium exists</h2>
+        <p style="max-width: 65ch;">
+          Academic robotics conferences are valuable &mdash; but they are also expensive, carbon-heavy, and often inaccessible.
+          This symposium was born as a different model: a focused, free, local event where researchers and enthusiasts can
+          exchange ideas without the overhead. No registration fee. No need to fly. Just good talks and good discussion.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============= SPEAKERS ============= -->
+    <section class="section" id="speakers">
+      <div class="container">
+        <span class="kicker">Speakers</span>
+        <h2>Speakers</h2>
+        <p class="muted" style="margin-bottom: 1.5rem;">(More to come!)</p>
+        <div class="cards">
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/Antonio_Bicchi.jpg" alt="Antonio Bicchi">
-            </div>
-            <p class="role">University of Pisa</p>
+            <img src="img/Antonio_Bicchi.jpg" alt="Antonio Bicchi">
+            <p class="aff">University of Pisa</p>
             <h3>Antonio Bicchi</h3>
-            <!-- <p>Topic of talk here?</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image">
-              <img src="img/Kunal_Masania.png" alt="Kunal Masania">
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <img src="img/Kunal_Masania.png" alt="Kunal Masania">
+            <p class="aff">Delft University of Technology</p>
             <h3>Kunal Masania</h3>
-            <!-- <p>Topic of talk here?</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/perla-maiolino.png" alt="Perla Maiolino">
-            </div>
-            <p class="role">University of Oxford</p>
+            <img src="img/perla-maiolino.png" alt="Perla Maiolino">
+            <p class="aff">University of Oxford</p>
             <h3>Perla Maiolino</h3>
-            <!-- <p>Topic of talk here?</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/Amador-Guillermo.jpg" alt="Guillermo Amador">
-            </div>
-            <p class="role">Wageningen University and Research</p>
+            <img src="img/Amador-Guillermo.jpg" alt="Guillermo Amador">
+            <p class="aff">Wageningen University and Research</p>
             <h3>Guillermo Amador</h3>
-            <!-- <p>Topic of talk here?</p> -->
           </article>
-        </div>
-        <div class="speaker-grid">
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/Volkert_vdWijk.jpg" alt="Volkert van der Wijk">
-            </div>
-            <p class="role">Kinetic Art Sculptures</p>
+            <img src="img/Volkert_vdWijk.jpg" alt="Volkert van der Wijk">
+            <p class="aff">Kinetic Art Sculptures</p>
             <h3>Volkert van der Wijk</h3>
-            <!-- <p>Associate Professor at TU Delft.</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/Just Herder.jpeg" alt="Just Herder">
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <img src="img/Just Herder.jpeg" alt="Just Herder">
+            <p class="aff">Delft University of Technology</p>
             <h3>Just Herder</h3>
-            <!-- <p>Short bio or talk summary.</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/Daniel_Simu.jpg" alt="Daniel Simu">
-            </div>
-            <p class="role">Artist & creative engineer</p>
+            <img src="img/Daniel_Simu.jpg" alt="Daniel Simu">
+            <p class="aff">Artist &amp; creative engineer</p>
             <h3>Daniel Simu</h3>
-            <!-- <p>Short bio or talk summary.</p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/david_lentink.png" alt="David Lentink">
-            </div>
-            <p class="role">University of Groningen</p>
+            <img src="img/david_lentink.png" alt="David Lentink">
+            <p class="aff">University of Groningen</p>
             <h3>David Lentink</h3>
-            <!-- <p>Short bio or talk summary.</p> -->
           </article>
-        </div>
-        <div class="speaker-grid">
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <img src="img/salua_hamaza.jpg" alt="Salua Hamaza">
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <img src="img/salua_hamaza.jpg" alt="Salua Hamaza">
+            <p class="aff">Delft University of Technology</p>
             <h3>Salua Hamaza</h3>
-            <!-- <p>Associate Professor at TU Delft.</p> -->
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-spaced" id="schedule">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Schedule</h2>
-          <p>To be announced.</p>
-        </div>
-        <div class="panel schedule-panel">
-          <table class="schedule-table">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Session</th>
-                <th>Speaker</th>
-              </tr>
-            </thead>
-            <!-- <tbody>
-              <tr>
-                <td>09:00</td>
-                <td>Opening remarks</td>
-                <td>Organizers</td>
-              </tr>
-              <tr>
-                <td>09:30</td>
-                <td>Keynote talk</td>
-                <td>Speaker name</td>
-              </tr>
-              <tr>
-                <td>10:30</td>
-                <td>Coffee break</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>12:00</td>
-                <td>Lunch</td>
-                <td>-</td>
-              </tr>
-            </tbody> -->
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-spaced" id="posters">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Posters</h2>
-          <p></p>
-        </div>
-        <div class="content-grid">
-          <article class="panel">
-            <h3>Abstract submissions</h3>
-            <p>
-              We welcome poster presentations from researchers, students, and practitioners. <br>
-              Submit a one-page abstract describing your work.
-              <br><br>
-              Submission deadline: [to be confirmed]
-              <br>
-              <!-- Poster format: A0 portrait
-              <br> -->
-            </p>
-            <br><br>
-            <a class="button button-primary button-disabled" href="https://docs.google.com/forms/d/e/1FAIpQLSdIYaRjVa6SswX8Qb4iMiq25CkTUQnOEMH6Q7XF8Z4Ecbb7Sw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Submit your abstract here</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-spaced" id="registration">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Registration</h2>
-          <p>This form will open in [month].</p>
-        </div>
-        <div class="content-grid">
-          <article class="panel">
-            <!-- <h3>Registration</h3> -->
-            <p>Signing up is managed through a separate system.</p> <br>
-            <p>Registration is free but space is limited - sign up early.</p>
-            <br>
-            <a class="button button-primary button-disabled" href="https://docs.google.com/forms/d/e/1FAIpQLSclJ74UhVq3hiPDyskB6gYUJCL9iPptWlU7bKDGz3CyfgEx2g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Registration coming soon</a>
-          </article>
-        </div>
-        
-      </div>
-    </section>
-
-    <section class="section section-spaced" id="practical_info">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Practical info</h2>
-          <p>For people travelling from outside Delft.</p>
-        </div>
-        <div class="content-grid two-up">
-          <article class="panel">
-            <h3>Getting there</h3>
-            <p>
-              Delft is 15 minutes by train from Rotterdam Centraal and 1 hour from Amsterdam Centraal. <br>
-              More info on the <a href="https://www.ns.nl/en" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">Dutch Railways website</a>. <br>
-            </p>
-          </article>
-          <article class="panel">
-            <h3>Accommodation</h3>
-            <p>We recommend hotels in Delft city centre, a 10-minute walk from campus. <br>
-              Options include [TBD].</p>
-          </article>
-          <article class="panel">
-            <h3>What is included</h3>
-            <p>Lunch and coffee breaks on both days are provided free of charge.</p>
-          </article>
-          <article class="panel">
-            <h3>Evening</h3>
-            <p>We will confirm whether there is a dinner or social event.</p>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section section-spaced" id="previous_edition">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Previous edition</h2>
-          <p>The first edition took place on 1. October 2025 at TU Delft</p>
-        </div>
-        <div class="content-grid">
-          <div class="speaker-grid gallery-grid">
-            <div class="speaker-card gallery-item">
-              <div class="speaker-image">
-                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+1" alt="Previous edition photo 1" loading="lazy">
+    <!-- ============= SCHEDULE ============= -->
+    <section class="section" id="schedule">
+      <div class="container">
+        <span class="kicker">Schedule</span>
+        <h2>Schedule</h2>
+        <p class="muted">To be announced.</p>
+        <div class="day" style="margin-top: 2rem;">
+          <div class="day-label">
+            <h2>Day 1</h2>
+            <p>14 September</p>
+          </div>
+          <div class="timeline">
+            <div class="slot">
+              <time>09:00</time>
+              <div>
+                <h3>Opening remarks</h3>
+                <p>Organizers</p>
               </div>
             </div>
-            <div class="speaker-card gallery-item">
-              <div class="speaker-image">
-                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+2" alt="Previous edition photo 2" loading="lazy">
+            <div class="slot">
+              <time>09:30</time>
+              <div>
+                <h3>Keynote talk</h3>
+                <p class="muted">Speaker name</p>
               </div>
             </div>
-            <div class="speaker-card gallery-item">
-              <div class="speaker-image">
-                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+3" alt="Previous edition photo 3" loading="lazy">
+            <div class="slot break">
+              <time>10:30</time>
+              <div>
+                <h3>Coffee break</h3>
               </div>
             </div>
-            <div class="speaker-card gallery-item">
-              <div class="speaker-image">
-                <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+4" alt="Previous edition photo 4" loading="lazy">
+            <div class="slot">
+              <time>12:00</time>
+              <div>
+                <h3>Lunch</h3>
               </div>
             </div>
           </div>
-          <article class="panel">
-            <h3>Recording</h3>
-            <p>Watch the recordings from the first edition on <a href="https://collegerama.tudelft.nl/Mediasite/Channel/robotics-urs2025/browse/null/most-recent/null/0/null" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">Collegerama</a>.</p>
-          </article>
+        </div>
+        <div class="day">
+          <div class="day-label">
+            <h2>Day 2</h2>
+            <p>15 September</p>
+          </div>
+          <div class="timeline">
+            <div class="slot">
+              <time>09:00</time>
+              <div>
+                <h3>Opening remarks</h3>
+                <p>Organizers</p>
+              </div>
+            </div>
+            <div class="slot break">
+              <time>10:30</time>
+              <div>
+                <h3>Coffee break</h3>
+              </div>
+            </div>
+            <div class="slot">
+              <time>12:00</time>
+              <div>
+                <h3>Lunch</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-spaced" id="organizers">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Organizers</h2>
-          <!-- <p>Further details to be announced.</p> -->
+    <!-- ============= POSTERS ============= -->
+    <section class="section" id="posters">
+      <div class="container">
+        <span class="kicker">Call for posters</span>
+        <h2>Posters</h2>
+        <div class="content-grid">
+          <div class="panel">
+            <h3>Abstract submissions</h3>
+            <p>
+              We welcome poster presentations from researchers, students, and practitioners.
+              Submit a one-page abstract describing your work.
+            </p>
+            <p>
+              Submission deadline: [to be confirmed]
+            </p>
+            <br>
+            <a class="button button-disabled" href="https://docs.google.com/forms/d/e/1FAIpQLSdIYaRjVa6SswX8Qb4iMiq25CkTUQnOEMH6Q7XF8Z4Ecbb7Sw/viewform" target="_blank" rel="noopener noreferrer">Submit your abstract here</a>
+          </div>
         </div>
-        <div class="speaker-grid">
+      </div>
+    </section>
+
+    <!-- ============= REGISTRATION ============= -->
+    <section class="section" id="registration">
+      <div class="container">
+        <span class="kicker">Registration</span>
+        <h2>Registration</h2>
+        <p class="muted">This form will open in [month].</p>
+        <br>
+        <div class="content-grid">
+          <div class="panel">
+            <p>Signing up is managed through a separate system. Registration is free but space is limited &mdash; sign up early.</p>
+            <br>
+            <a class="button button-disabled" href="https://docs.google.com/forms/d/e/1FAIpQLSclJ74UhVq3hiPDyskB6gYUJCL9iPptWlU7bKDGz3CyfgEx2g/viewform" target="_blank" rel="noopener noreferrer">Registration coming soon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= PRACTICAL INFO ============= -->
+    <section class="section" id="practical_info">
+      <div class="container">
+        <span class="kicker">Practical</span>
+        <h2>Practical info</h2>
+        <p class="muted">For people travelling from outside Delft.</p>
+        <br>
+        <div class="content-grid two-up">
+          <div class="panel">
+            <h3>Getting there</h3>
+            <p>
+              Delft is 15 minutes by train from Rotterdam Centraal and 1 hour from Amsterdam Centraal.
+              More info on the <a href="https://www.ns.nl/en" target="_blank" rel="noopener noreferrer">Dutch Railways website</a>.
+              Public transport can be easily checked in &amp; out with your debit card, credit card, your mobile or smartwatch.
+              More info <a href="https://www.ovpay.nl/en/paymentcard" target="_blank" rel="noopener noreferrer">here</a>.
+            </p>
+            <br>
+            <h3>What is included</h3>
+            <p>Lunch and coffee breaks on both days are provided free of charge.</p>
+            <br>
+            <h3>Evening</h3>
+            <p>We will confirm whether there is a dinner or social event.</p>
+          </div>
+          <div class="panel">
+            <h3>Accommodation</h3>
+            <p>We recommend hotels in Delft city centre; campus is easily accessible by foot, bike or bus (about 5&ndash;10 minutes). Some options include:</p>
+            <br>
+            <table style="width:100%; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th style="text-align:left; padding:8px 6px; border-bottom:2px solid var(--ink);">Name</th>
+                  <th style="text-align:left; padding:8px 6px; border-bottom:2px solid var(--ink);">Note</th>
+                  <th style="text-align:left; padding:8px 6px; border-bottom:2px solid var(--ink);">Price 2 nights</th>
+                  <th style="text-align:left; padding:8px 6px; border-bottom:2px solid var(--ink);"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">The Social Hub</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">Right next to the train station</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">200€</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);"><a href="https://www.thesocialhub.co/delft/hotel-stay/" target="_blank" rel="noopener noreferrer">Click</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">ibis Styles Delft</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">Right next to the train station</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">210€</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);"><a href="https://all.accor.com/hotel/B5M3/index.nl.shtml" target="_blank" rel="noopener noreferrer">Click</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">Casa Julia</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">Close to campus</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);">220€</td>
+                  <td style="padding:8px 6px; border-bottom:1px solid var(--line);"><a href="https://www.casajulia.nl/en" target="_blank" rel="noopener noreferrer">Click</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= PREVIOUS EDITION ============= -->
+    <section class="section" id="previous_edition">
+      <div class="container">
+        <span class="kicker">Previous edition</span>
+        <h2>Previous edition</h2>
+        <p class="muted">The first edition took place on 1 October 2025 at TU Delft</p>
+        <br>
+        <div class="gallery-grid">
+          <div class="speaker-card gallery-item">
+            <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+1" alt="Previous edition photo 1" loading="lazy">
+          </div>
+          <div class="speaker-card gallery-item">
+            <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+2" alt="Previous edition photo 2" loading="lazy">
+          </div>
+          <div class="speaker-card gallery-item">
+            <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+3" alt="Previous edition photo 3" loading="lazy">
+          </div>
+          <div class="speaker-card gallery-item">
+            <img src="https://placehold.co/600x450/e2e8f0/64748b?text=Photo+4" alt="Previous edition photo 4" loading="lazy">
+          </div>
+        </div>
+        <br>
+        <div class="content-grid">
+          <div class="panel">
+            <h3>Recording</h3>
+            <p>Watch the recordings from the first edition on <a href="https://collegerama.tudelft.nl/Mediasite/Channel/robotics-urs2025/browse/null/most-recent/null/0/null" target="_blank" rel="noopener noreferrer">Collegerama</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= ORGANIZERS ============= -->
+    <section class="section" id="organizers">
+      <div class="container">
+        <span class="kicker">Organizers</span>
+        <h2>Organizers</h2>
+        <div class="cards">
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <a href="https://www.tudelft.nl/staff/c.dellasantina/" target="_blank" rel="noopener noreferrer">
-                <img src="img/cosimo.jpg" alt="Cosimo Della Santa">
-              </a>
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <a href="https://www.tudelft.nl/staff/c.dellasantina/" target="_blank" rel="noopener noreferrer">
+              <img src="img/cosimo.jpg" alt="Cosimo Della Santina">
+            </a>
+            <p class="aff">Delft University of Technology</p>
             <h3>Cosimo Della Santina</h3>
-            <!-- <p><a href="mailto:c.dellasantina@tudelft.nl" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">E-Mail</a></p> -->
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <a href="https://www.tudelft.nl/en/staff/e.shahabishalghouni/" target="_blank" rel="noopener noreferrer">
-                <img src="img/Ebrahim_Shahabi.jpg" alt="Ebrahim Shahabi">
-              </a>
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <a href="https://www.tudelft.nl/en/staff/e.shahabishalghouni/" target="_blank" rel="noopener noreferrer">
+              <img src="img/Ebrahim_Shahabi.jpg" alt="Ebrahim Shahabi">
+            </a>
+            <p class="aff">Delft University of Technology</p>
             <h3>Ebrahim Shahabi</h3>
           </article>
           <article class="speaker-card">
-            <div class="speaker-image speaker-image--top">
-              <a href="https://www.tudelft.nl/en/staff/d.farhadimachekposhti/" target="_blank" rel="noopener noreferrer">
-                <img src="img/Davood_Farhadi.jpeg" alt="Davood Farhadi">
-              </a>
-            </div>
-            <p class="role">Delft University of Technology</p>
+            <a href="https://www.tudelft.nl/en/staff/d.farhadimachekposhti/" target="_blank" rel="noopener noreferrer">
+              <img src="img/Davood_Farhadi.jpeg" alt="Davood Farhadi">
+            </a>
+            <p class="aff">Delft University of Technology</p>
             <h3>Davood Farhadi</h3>
           </article>
         </div>
@@ -383,47 +392,28 @@
               </a>
             </div>
           </div>
-          <h3>Kindly supported by</h3>
+          <h3 style="font-size: 1rem;">Kindly supported by</h3>
           <div class="sponsor-grid">
             <div class="sponsor-placeholder">
               <span>Coming soon</span>
             </div>
-            <!-- <div class="sponsor-placeholder">
-              <span>Your logo here</span>
-            </div>
-            <div class="sponsor-placeholder">
-              <span>Your logo here</span>
-            </div> -->
           </div>
         </div>
       </div>
     </section>
 
-
-    <section class="section section-spaced" id="location">
-      <div class="shell section-block">
-        <div class="section-header">
-          <h2>Location</h2>
-          <p>Somewhere in Delft... More info coming soon.</p>
-        </div>
-        <!-- <div class="content-grid two-up location-grid">
-          <article class="panel">
-            <h3>Venue and lunch spots</h3>
-            <ul class="detail-list">
-              <li><strong>Conference venue:</strong> main event location</li>
-              <li><strong>Lunch spot 1:</strong> near the venue</li>
-              <li><strong>Lunch spot 2:</strong> another nearby option</li>
-            </ul>
-            <p class="note">The markers are colored and the popup text can include a link.</p>
-          </article>
-          <article class="panel map-panel">
-            <div id="simple-map" class="map-frame" aria-label="OpenStreetMap map with custom markers"></div>
-          </article>
-        </div> -->
+    <!-- ============= LOCATION ============= -->
+    <section class="section" id="location">
+      <div class="container">
+        <span class="kicker">Location</span>
+        <h2>Location</h2>
+        <p class="muted">Somewhere in Delft&hellip; More info coming soon.</p>
       </div>
     </section>
+
   </main>
 
+  <!-- ============= LIGHTBOX ============= -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <div class="lightbox-content">
@@ -431,8 +421,12 @@
     </div>
   </div>
 
-  <footer class="footer shell">
-    <p>Unconventional Robotics Symposium 2026</p>
+  <!-- ============= FOOTER ============= -->
+  <footer class="footer">
+    <div class="container">
+      <p>Unconventional Robotics Symposium 2026</p>
+      <p class="muted" style="color: var(--tan-light); font-size: .9rem;">A TU Delft Robotics Institute event</p>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -536,6 +530,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
+
 </body>
 </html>
-
