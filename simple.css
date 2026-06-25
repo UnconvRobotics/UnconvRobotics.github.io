@@ -194,7 +194,7 @@ p { line-height: 1.6; }
 
 .hero .doodles {
   position: absolute; inset: 0; z-index: -1; opacity: .15;
-  background: url('assets/hero-doodles.svg') right center / contain no-repeat;
+  background: url('img/doodles.svg') right center / contain no-repeat;
 }
 @media (max-width: 800px) {
   .hero { padding: 3rem 0; }
@@ -230,9 +230,18 @@ p { line-height: 1.6; }
    SECTION DIVIDER
    ------------------------------------------ */
 .section-divider {
-  height: 30px; margin: 3.5rem 0; opacity: .45;
-  background: url('assets/wave-divider.svg') repeat-x;
+  height: 30px; padding: 3.5rem auto;
+  /* width: min(var(--maxw), calc(100% - 2.5rem)); */
+  background: var(--paper);
+  position: relative;
+}
+.section-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('img/wave-divider.svg') repeat-x;
   background-size: auto 22px;
+  opacity: .45;
 }
 
 .section > .container > h2::before {
