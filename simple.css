@@ -160,14 +160,19 @@ p { line-height: 1.6; }
   color: var(--ink);
   font-weight: 800;
   text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform .2s ease, background .25s ease, color .25s ease, border-color .25s ease, box-shadow .2s ease;
   min-height: 44px;
 }
-.button:hover { 
-  /* transform: translateY(-2px); 
-  box-shadow: 0 6px 18px rgba(23,35,49,.18);  */
-  text-decoration: none; }
-.button.secondary { background: transparent; border: 2px solid var(--ink);}
+.button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(232,119,58,.2);
+  text-decoration: none;
+}
+.button:active {
+  transform: scale(.97);
+}
+.button.secondary { background: transparent; border: 2px solid var(--ink); color: var(--ink); }
+.button.secondary:hover { background: var(--orange); border-color: var(--orange); color: var(--ink); box-shadow: 0 6px 20px rgba(232,119,58,.2); }
 .button-disabled { opacity: .5; pointer-events: none; }
 
 /* ------------------------------------------
